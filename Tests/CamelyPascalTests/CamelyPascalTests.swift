@@ -4,14 +4,14 @@ import XCTest
 import CamelyPascalMacros
 
 let testMacros: [String: Macro.Type] = [
-    "camelyPascal": CamelyPascalMacro.self,
+    "CamelyPascal": CamelyPascalMacro.self,
 ]
 
 final class CamelyPascalTests: XCTestCase {
-    func testMacro() {
+    func test_CamelyPascal_inClass() {
         assertMacroExpansion(
             """
-            @camelyPascal
+            @CamelyPascal
             class Example: Codable {
                 var string: String?
                 var int: Int?
@@ -32,10 +32,10 @@ final class CamelyPascalTests: XCTestCase {
         )
     }
     
-    func testMacroWithStruct() {
+    func test_CamelyPascal_inStruct() {
         assertMacroExpansion(
             """
-            @camelyPascal
+            @CamelyPascal
             struct Example {
                 var stringA: String?
                 var intB: Int?
